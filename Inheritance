@@ -1,64 +1,69 @@
 import java.util.*;
 
-class Employee {
-    double salary;
-    // float salary;
+class Worker {
+    double pay;
 
-    void displaySalary() {
-        System.out.println("Salary: " + salary);
+    void showPay() {
+        System.out.println("Salary: " + pay);
     }
 }
 
-class FullTime extends Employee {
+class PermanentEmployee extends Worker {
 
-    void calculateSalary(Scanner sc) {
+    void processSalary(Scanner sc) {
+        System.out.println("Permanent Employee");
+        System.out.print("Enter basic salary: ");
+        pay = sc.nextDouble();
 
-        System.out.println("Full Time Employee");
-        System.out.print("Enter salary: ");
-        salary = sc.nextDouble();
+        System.out.print("Before increment: ");
+        showPay();
 
-        System.out.print("Salary before hike: ");
-        displaySalary();
+        pay = pay * 1.50;
 
-        salary = salary + (salary * 0.50);
-        // salary = salary*1.5;
-        
-        System.out.print("Salary after 50% hike: ");
-        displaySalary();
+        System.out.print("After 50% increment: ");
+        showPay();
         System.out.println();
     }
 }
 
-class Intern extends Employee {
-    
-    void calculateSalary(Scanner sc) {
-        
-        System.out.println("Intern Employee");
-        System.out.print("Enter salary: ");
-        salary = sc.nextDouble();
-        
-        System.out.print("Salary before hike: ");
-        displaySalary();
-        
-        salary = salary + (salary * 0.25);
-        // salary = salary*1.25;
-        
-        System.out.print("Salary after 25% hike: ");
-        displaySalary();
+class Trainee extends Worker {
+
+    void processSalary(Scanner sc) {
+        System.out.println("Trainee");
+        System.out.print("Enter basic salary: ");
+        pay = sc.nextDouble();
+
+        System.out.print("Before increment: ");
+        showPay();
+
+        pay = pay * 1.25;
+
+        System.out.print("After 25% increment: ");
+        showPay();
         System.out.println();
     }
 }
 
-public class InheritanceTrial {
+public class CompanyTest {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
-        FullTime fulltimeworker = new FullTime();
-        fulltimeworker.calculateSalary(sc);
-        
-        Intern internworker = new Intern();
-        internworker.calculateSalary(sc);
-        
+
+        System.out.print("Enter number of Permanent Employees: ");
+        int pCount = sc.nextInt();
+
+        for (int i = 0; i < pCount; i++) {
+            PermanentEmployee p = new PermanentEmployee();
+            p.processSalary(sc);
+        }
+
+        System.out.print("Enter number of Trainees: ");
+        int tCount = sc.nextInt();
+
+        for (int i = 0; i < tCount; i++) {
+            Trainee t = new Trainee();
+            t.processSalary(sc);
+        }
+
         sc.close();
     }
 }
