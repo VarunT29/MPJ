@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+class Shapes {
+    double length, breadth, radius;
+
+    Shapes(double length, double breadth) {
+        this.length = length;
+        this.breadth = breadth;
+    }
+
+    Shapes(double radius) {
+        this.radius = radius;
+    }
+
+    double areaRectangle() {
+        return length * breadth;
+    }
+
+    double areaCircle() {
+        return 3.14 * radius * radius;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter length: ");
+        double l = sc.nextDouble();
+
+        System.out.print("Enter breadth: ");
+        double b = sc.nextDouble();
+
+        Shapes s1 = new Shapes(l, b);
+        System.out.println("Area of Rectangle = " + s1.areaRectangle());
+
+        System.out.print("\nEnter radius: ");
+        double r = sc.nextDouble();
+
+        Shapes s2 = new Shapes(r);
+        System.out.println("Area of Circle = " + s2.areaCircle());
+
+        sc.close();
+    }
+}
