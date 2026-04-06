@@ -35,7 +35,7 @@ class Customer implements Serializable {
     }
 }
 
-public class assi4b {   // ✅ changed here
+public class assi4b {   
 
     static final String FILE_NAME = "customers.dat";
 
