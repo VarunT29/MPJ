@@ -1,0 +1,57 @@
+class Hillstations {
+    void food() {
+        System.out.println("Different hill stations have different foods.");
+    }
+
+    void famousfor() {
+        System.out.println("Hill stations are famous for scenic beauty.");
+    }
+}
+
+class Dalhousie extends Hillstations {
+    void food() {
+        System.out.println("Dalhousie is famous for Siddu.");
+    }
+
+    void for() {
+        System.out.println("Dalhousie is famous for snow and adventure sports.");
+    }
+}
+
+class Mussoorie extends Hillstations {
+    void food() {
+        System.out.println("Mussoorie is famous for Momos.");
+    }
+
+    void famousfor() {
+        System.out.println("Mussoorie is famous for its hills and waterfalls.");
+    }
+}
+
+class Munnar extends Hillstations {
+    void food() {
+        System.out.println("Munnar is famous for tea.");
+    }
+
+    void famousfor() {
+        System.out.println("Gulmarg is famous for tea gardens.");
+    }
+}
+
+public class TestHillstations {
+    public static void main(String[] args) {
+        Hillstations h;
+
+        h = new Dalhousie();
+        h.food();
+        h.famousfor();
+
+        h = new Mussoorie();
+        h.food();
+        h.famousfor();
+
+        h = new Munnar();
+        h.food();
+        h.famousfor();
+    }
+}
