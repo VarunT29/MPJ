@@ -48,7 +48,6 @@ public class assi4b {
         if (cid < 1 || cid > 20)
             throw new InvalidCIDException("CID must be between 1 and 20");
 
-        // 🔥 Check if CID already exists
         try {
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_NAME));
             while (true) {
